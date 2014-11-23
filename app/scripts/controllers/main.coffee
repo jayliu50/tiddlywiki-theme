@@ -1,5 +1,5 @@
 @app
-  .controller 'MainCtrl', ($scope, DataService, ngDialog, $sce) ->
+  .controller 'MainCtrl', ($scope, DataService, ngDialog, $sce, $filter) ->
 
     # $scope.expanded = true
 
@@ -21,22 +21,26 @@
       $scope.cards.unshift something
 
     $scope.editNewCard = () ->
-      newCard =
-        content: "Testing testing"
-        renderedContent:  $sce.trustAsHtml "<h2>renderedContent</h2>"
-
-      $scope.currentCard = newCard
 
       ngDialog.open(
         template: '/views/editor.html'
         scope: $scope
         );
 
-    $scope.testStopEdit = (event) ->
-      $scope.isEditing = angular.element(event.target).attr('class') if not 'code'
+    $scope.render = () ->
+      debugger
+      $scope.currentCardRenderedContent = $filter('wikitext')($scope.currentCardContent)
 
-    $scope.isEditing = true
-    $scope.startEditing = () ->
-      $scope.isEditing = true
-      angular.element('textarea').focus()
-      return
+    $scope.currentCardContent = "!works"
+
+
+    $scope.hints =
+          'Header':
+            example: '!! Heading 2'
+            explanation: 'This will create a 2nd level heading called "Heading 2". (The two ! marks signify 2nd level)'
+          'Link':
+            example: '[[Your Page]]'
+            explanation: 'this will create a link to "Your Page", even if it does not yet exist'
+
+    $scope.setHint = (hint) ->
+      $scope.currentHint = $scope.hints[hint]
