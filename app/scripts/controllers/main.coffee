@@ -22,7 +22,8 @@
         );
 
       dialog.closePromise.then (data) ->
-        $scope.cards.unshift data.$dialog.scope().currentCard # whatev
+        card = data.$dialog.scope().currentCard # whatev
+        $scope.cards.unshift card unless data.value is 'discard' and not card?
 
 
     $scope.hints =
