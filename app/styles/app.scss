@@ -1,0 +1,389 @@
+@import "compass";
+@import "font-awesome.css";
+@import "compass/reset";
+@import "modular-scale";
+@import "breakpoint";
+@import "susy";
+
+$susy: (
+  // gutters: 1/4
+  // gutter-position: outside
+);
+
+
+@import "toolkit";
+@import "toolkit/kickstart";
+
+@import "grid";
+@import "colors";
+@import "typography";
+
+@import "borders";
+@import "ngdialog";
+@import "editor";
+
+img {
+	max-width: 100%;
+}
+
+.card {
+	border: 1px solid $color-gray-light;
+	padding: 1em;
+	margin: 3px;
+
+	.cta {
+		display: none;
+		padding-bottom: 2em;
+		margin-top: 0.5em;
+	}
+
+	&:hover {
+		.cta {
+			display: block;
+		}
+	}
+}
+
+h1 {
+	font-size: 2em;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 1.7em;
+	line-height: 1.5em;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 1.4em;
+	line-height: 1.5em;
+	font-weight: 700;
+}
+
+h4 {
+	font-size: 1.2em;
+	line-height: 1.5em;
+	font-weight: 700;
+}
+
+a {
+	cursor: pointer;
+	color: $color-gray-dark;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.cta {
+	border: 1px solid $color-gray-lighter;
+	background: $color-gray-light;
+	padding: 1em;
+	a {
+
+	}
+
+}
+
+.card-suggestions {
+	padding: 1em 0 1em 0;
+
+	p {
+		margin: 1em 0;
+	}
+}
+
+.resource {
+	padding: 1em;
+	a {
+		font-weight: 700;
+	}
+}
+
+body {
+	@extend %font;
+	color: $color-gray-dark;
+}
+
+$header-padding: 1em;
+
+header {
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+
+	padding: $header-padding;
+
+	ul li {
+		display: inline-block;
+	}
+
+	@include container (70em);
+}
+
+.add {
+	@include span(1 at 2 of 8);
+}
+
+input.omnibar {
+	@include span(6 at 2 of 8);
+	padding: 10px 0;
+}
+
+.export {
+	@include span(1 at 8 of 8);
+}
+
+.button {
+	cursor: pointer;
+	padding: 10px 0;
+	background: $color-gray-lighter;
+	text-align: center;
+	transition: all 0.5s;
+	border-radius: 3px;
+
+	&:hover {
+		background: $color-gray;
+		color: white;
+	}
+}
+
+
+
+main {
+	@include container(70em);
+	@include clearfix;
+	margin-top: 5em + 2 * $header-padding;
+}
+
+.deckgrid {
+	clear: both;
+}
+
+.compact .name {
+	color: black;
+}
+
+.info-collapsed {
+	@include clearfix;
+	width: 100%;
+
+	li {
+		display: inline;
+		float: left;
+		padding-right: 2%;
+	}
+
+	.name {
+		@extend h1;
+		display: inline;
+	}
+}
+
+
+.actions li {
+	display: inline;
+	padding-right: 5px;
+	vertical-align: top;
+
+}
+
+.right {
+	float: right !important;
+}
+
+.left {
+	float: left !important;
+}
+
+.clear {
+	clear: both;
+}
+
+a.suggester-tab {
+	position: fixed;
+	bottom: 0px;
+	// right: 2em;
+	background: $color-gray-dark;
+	padding: 0.5em 1em;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: $color-foreground;
+
+	&:hover {
+		background: $color-gray-darker;
+		text-decoration: none;
+	}
+}
+
+
+.suggester {
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: $color-foreground;
+	position: fixed;
+	padding: 0.5em;
+	background: $color-gray-dark;
+
+	.suggestion {
+
+		padding-top: 1em;
+		padding-bottom: 4em;
+		position: relative;
+
+		.controls {
+			position: absolute;
+			bottom: 5px;
+			left: 5px;
+			right: -33%; // not sure why this works
+		}
+
+		.controls li {
+			@include span(3 at 4 of 12 no-gutter);
+			display: none;
+		}
+	}
+}
+
+li.suggestion {
+	border: 1px $color-gray solid;
+	@include gallery(3 at 4 of 12);
+	& > div {
+		margin: 1em;
+	}
+
+	&:hover {
+		background: $color-gray-darker;
+
+		& .controls li {
+			display: block;
+		}
+	}
+}
+
+.side-tab {
+	position: fixed;
+	right: -120px + 12px;
+	background: $color-gray-dark;
+	padding: 0.5em 1em;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	color: $color-foreground;
+	width: 120px;
+	transition: 0.25s all ease-in-out;
+
+	&:hover {
+		right: 0;
+		text-decoration: none;
+		background: $color-gray-darker;
+	}
+
+	span {
+		margin-left: 12px;
+	}
+}
+
+.discussion-tab {
+	top: 7em;
+}
+
+.resources-tab {
+	top: 9em;
+}
+
+.history-tab {
+	top: 11em;
+}
+
+.notes-tab {
+	top: 13em;
+}
+
+
+.side-bar {
+	position: fixed;
+	top: 7em;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	background: $color-gray-light;
+	width: 30em;
+	padding: 1em;
+}
+
+.discussion-tab-body {
+	bottom: 10px;
+}
+
+.chats {
+	padding: 1em;
+}
+
+.chat-left {
+	text-align: left;
+
+}
+
+.chat-right {
+	text-align: right;
+}
+
+.message {
+	line-height: 2em;
+	color: black;
+}
+
+.by {
+	font-size: 0.8em;
+}
+
+.chat-input {
+	width: 90%;
+	@include horizontal-center();
+	display: block;
+}
+
+.resources {
+	.controls {
+		li {
+			display: inline-block;
+		}
+	}
+}
+
+.history {
+	padding-top: 2em;
+
+	li {
+
+	}
+}
+
+.date {
+	border-top: 1px dashed white;
+	margin-top: 1em;
+	p {
+		text-align: center;
+		color: white;
+		margin-top: -0.5em;
+		display: block;
+
+		span {
+			background: $color-gray-light;
+			padding: 0 0.7em;
+		}
+	}
+}
+
+.notes {
+	textarea {
+		clear: both;
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
+}

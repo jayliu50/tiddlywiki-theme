@@ -1,0 +1,14 @@
+.editor(ng-click="testStopEdit($event)")
+	input(placeholder="Your New Card Title", ng-model="title")
+	ul.controls
+		li.formatter
+			| hey
+		li.formatter
+			| you
+	.code(ng-show="isEditing", editable-textarea="currentCard.content", e-rows="30", e-cols="40", ng-bind-html="currentCard.renderedContent")
+	.controls
+		.left
+			| delete
+		.right
+			| discard changes
+		

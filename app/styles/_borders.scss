@@ -1,0 +1,10 @@
+.panel {
+    border-radius: 5px;
+    margin: 10px;
+    padding: 30px 40px;
+}
+
+.feature {
+    background: lighten($color-gray-light, 20%);
+    @extend .panel;
+}

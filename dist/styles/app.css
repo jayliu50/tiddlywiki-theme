@@ -1,0 +1,629 @@
+@import url(font-awesome.css);
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700");
+/* line 5, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1,
+.info-collapsed .name, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 2, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_grid.scss */
+.deckgrid[deckgrid]::before {
+  /* Specifies that the grid should have a maximum of 4 columns. Each column will have the classes 'column' and 'column-1-4' */
+  content: '4 .column.column-1-4';
+  font-size: 0;
+  /* See https://github.com/akoenig/angular-deckgrid/issues/14#issuecomment-35728861 */
+  visibility: hidden;
+}
+
+/* line 9, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_grid.scss */
+.deckgrid .column {
+  float: left;
+}
+
+/* line 13, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_grid.scss */
+.deckgrid .column-1-4 {
+  width: 25%;
+}
+
+/* line 11, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_colors.scss */
+.gray-1 {
+  color: #d9d9d9;
+}
+
+/* line 15, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_colors.scss */
+.bg-gray-1 {
+  background-color: #d9d9d9;
+}
+
+/* line 11, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_colors.scss */
+.gray-2 {
+  color: #b3b3b3;
+}
+
+/* line 15, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_colors.scss */
+.bg-gray-2 {
+  background-color: #b3b3b3;
+}
+
+/* line 11, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_colors.scss */
+.gray-3 {
+  color: #8c8c8c;
+}
+
+/* line 15, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_colors.scss */
+.bg-gray-3 {
+  background-color: #8c8c8c;
+}
+
+/* line 11, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_colors.scss */
+.gray-4 {
+  color: #666666;
+}
+
+/* line 15, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_colors.scss */
+.bg-gray-4 {
+  background-color: #666666;
+}
+
+/* line 11, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_colors.scss */
+.gray-5 {
+  color: #404040;
+}
+
+/* line 15, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_colors.scss */
+.bg-gray-5 {
+  background-color: #404040;
+}
+
+/* line 11, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_colors.scss */
+.gray-6 {
+  color: #1a1a1a;
+}
+
+/* line 15, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_colors.scss */
+.bg-gray-6 {
+  background-color: #1a1a1a;
+}
+
+/* line 4, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_typography.scss */
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* line 9, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_typography.scss */
+.subdued {
+  font-size: 1em;
+  font-variant: small-caps;
+  font-weight: 400;
+  color: #0000fe;
+}
+
+/* line 16, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_typography.scss */
+.inverted {
+  color: white;
+}
+
+/* line 1, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_borders.scss */
+.panel, .feature {
+  border-radius: 5px;
+  margin: 10px;
+  padding: 30px 40px;
+}
+
+/* line 7, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/_borders.scss */
+.feature {
+  background: #f9f9f9;
+}
+
+/* line 15, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 19, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.card {
+  border: 1px solid #c6c6c6;
+  padding: 1em;
+  margin: 3px;
+}
+/* line 24, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.card .cta {
+  display: none;
+  padding-bottom: 2em;
+  margin-top: 0.5em;
+}
+/* line 31, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.card:hover .cta {
+  display: block;
+}
+
+/* line 37, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+h1, .info-collapsed .name {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+/* line 42, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+h2 {
+  font-size: 1.7em;
+  line-height: 1.5em;
+  font-weight: 700;
+}
+
+/* line 48, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+h3 {
+  font-size: 1.4em;
+  line-height: 1.5em;
+  font-weight: 700;
+}
+
+/* line 54, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+h4 {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  font-weight: 700;
+}
+
+/* line 60, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+a {
+  cursor: pointer;
+  color: #666666;
+}
+/* line 63, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 68, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.cta {
+  border: 1px solid #d9d9d9;
+  background: #c6c6c6;
+  padding: 1em;
+}
+
+/* line 78, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.card-suggestions {
+  padding: 1em 0 1em 0;
+}
+/* line 81, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.card-suggestions p {
+  margin: 1em 0;
+}
+
+/* line 86, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.resource {
+  padding: 1em;
+}
+/* line 88, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.resource a {
+  font-weight: 700;
+}
+
+/* line 93, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+body {
+  color: #666666;
+}
+
+/* line 100, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+header {
+  background: #d9d9d9;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 1em;
+}
+
+/* line 113, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+main {
+  max-width: 70em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7em;
+}
+/* line 12, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+main:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 13, ../../../../../.rvm/gems/ruby-2.1.2/gems/toolkit-2.6.0/stylesheets/toolkit/_clearfix.scss */
+main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 119, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.deckgrid {
+  clear: both;
+}
+
+/* line 123, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.compact .name {
+  color: black;
+}
+
+/* line 127, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.info-collapsed {
+  width: 100%;
+}
+/* line 13, ../../../../../.rvm/gems/ruby-2.1.2/gems/toolkit-2.6.0/stylesheets/toolkit/_clearfix.scss */
+.info-collapsed:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 131, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.info-collapsed li {
+  display: inline;
+  float: left;
+  padding-right: 2%;
+}
+/* line 137, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.info-collapsed .name {
+  display: inline;
+}
+
+/* line 143, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.info-expanded {
+  background: #d9d9d9;
+  margin-top: 1.5em;
+}
+/* line 13, ../../../../../.rvm/gems/ruby-2.1.2/gems/toolkit-2.6.0/stylesheets/toolkit/_clearfix.scss */
+.info-expanded:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 148, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.info-expanded > li {
+  display: inline-block;
+  padding-right: 2%;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 20%;
+  float: left;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+/* line 66, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
+.info-expanded > li:nth-child(5n + 1) {
+  margin-left: 0;
+  margin-right: -100%;
+  clear: both;
+}
+/* line 66, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
+.info-expanded > li:nth-child(5n + 2) {
+  margin-left: 20%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 66, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
+.info-expanded > li:nth-child(5n + 3) {
+  margin-left: 40%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 66, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
+.info-expanded > li:nth-child(5n + 4) {
+  margin-left: 60%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 66, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
+.info-expanded > li:nth-child(5n + 5) {
+  margin-left: 80%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 157, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.info-expanded .info-list li {
+  display: block;
+  padding: 0;
+}
+
+/* line 164, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.actions li {
+  display: inline;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+/* line 171, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.right {
+  float: right !important;
+}
+
+/* line 175, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.left {
+  float: left !important;
+}
+
+/* line 179, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.clear {
+  clear: both;
+}
+
+/* line 183, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+a.suggester-tab {
+  position: fixed;
+  bottom: 0px;
+  background: #666666;
+  padding: 0.5em 1em;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
+}
+/* line 193, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+a.suggester-tab:hover {
+  background: #1a1a1a;
+  text-decoration: none;
+}
+
+/* line 204, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.suggester {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  position: fixed;
+  padding: 0.5em;
+  background: #666666;
+}
+/* line 213, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.suggester .suggestion {
+  padding-top: 1em;
+  padding-bottom: 4em;
+  position: relative;
+}
+/* line 219, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.suggester .suggestion .controls {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  right: -33%;
+}
+/* line 226, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.suggester .suggestion .controls li {
+  width: 23.72881%;
+  float: left;
+  display: none;
+}
+
+/* line 233, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+li.suggestion {
+  border: 1px #8c8c8c solid;
+  width: 23.72881%;
+  float: left;
+}
+/* line 66, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
+li.suggestion:nth-child(4n + 1) {
+  margin-left: 0;
+  margin-right: -100%;
+  clear: both;
+  margin-left: 0;
+}
+/* line 66, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
+li.suggestion:nth-child(4n + 2) {
+  margin-left: 25.42373%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 66, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
+li.suggestion:nth-child(4n + 3) {
+  margin-left: 50.84746%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 66, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/language/susy/_gallery.scss */
+li.suggestion:nth-child(4n + 4) {
+  margin-left: 76.27119%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 236, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+li.suggestion > div {
+  margin: 1em;
+}
+/* line 240, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+li.suggestion:hover {
+  background: #1a1a1a;
+}
+/* line 243, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+li.suggestion:hover .controls li {
+  display: block;
+}
+
+/* line 249, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.side-tab {
+  position: fixed;
+  right: -108px;
+  background: #666666;
+  padding: 0.5em 1em;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: white;
+  width: 120px;
+  transition: 0.25s all ease-in-out;
+}
+/* line 260, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.side-tab:hover {
+  right: 0;
+  text-decoration: none;
+  background: #1a1a1a;
+}
+/* line 266, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.side-tab span {
+  margin-left: 12px;
+}
+
+/* line 271, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.discussion-tab {
+  top: 7em;
+}
+
+/* line 275, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.resources-tab {
+  top: 9em;
+}
+
+/* line 279, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.history-tab {
+  top: 11em;
+}
+
+/* line 283, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.notes-tab {
+  top: 13em;
+}
+
+/* line 288, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.side-bar {
+  position: fixed;
+  top: 7em;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: #c6c6c6;
+  width: 30em;
+  padding: 1em;
+}
+
+/* line 299, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.discussion-tab-body {
+  bottom: 10px;
+}
+
+/* line 303, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.chats {
+  padding: 1em;
+}
+
+/* line 307, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.chat-left {
+  text-align: left;
+}
+
+/* line 312, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.chat-right {
+  text-align: right;
+}
+
+/* line 316, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.message {
+  line-height: 2em;
+  color: black;
+}
+
+/* line 321, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.by {
+  font-size: 0.8em;
+}
+
+/* line 325, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.chat-input {
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+}
+
+/* line 333, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.resources .controls li {
+  display: inline-block;
+}
+
+/* line 339, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.history {
+  padding-top: 2em;
+}
+
+/* line 347, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.date {
+  border-top: 1px dashed white;
+  margin-top: 1em;
+}
+/* line 350, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.date p {
+  text-align: center;
+  color: white;
+  margin-top: -0.5em;
+  display: block;
+}
+/* line 356, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.date p span {
+  background: #c6c6c6;
+  padding: 0 0.7em;
+}
+
+/* line 364, ../../static_compiler-tmp_dest_dir-Tf0ye06J.tmp/styles/app.scss */
+.notes textarea {
+  clear: both;
+  display: block;
+  height: 100%;
+  width: 100%;
+}

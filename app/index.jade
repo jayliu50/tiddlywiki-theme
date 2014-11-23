@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    link(rel="stylesheet", href='/bower/ngDialog.css')
+    link(rel="stylesheet", href='/bower/xeditable.css')
+    link(rel="stylesheet", href='/bower/ngDialog-theme-default.css')
+    link(rel='stylesheet', href='/styles/app.css')
+    script(src='/bower/jquery.js')
+    script(src='/bower/lodash.compat.js')
+    script(src='/bower/angular.js')
+    script(src='/bower/angular-ui-router.js')
+    script(src='/bower/angular-placeholders.js')
+    script(src='/bower/angular-scroll.min.js')
+    script(src='/bower/angular-deckgrid.js')
+    script(src='/bower/angular-inview.js')
+    script(src='/bower/ngDialog.js')
+    script(src='/bower/xeditable.js')
+    script(src='/scripts/app.js')
+
+  body(ng-app='prototypeAngularApp' ng-controller='MainCtrl')
+    header
+          .button.add(ng-click="editNewCard()")
+            i.fa.fa-plus-circle
+            | 
+            | Add
+          input.omnibar(placeholder="Open")
+          .button.export
+            span Export
+          
+    main
+      ul.controls
+        li
+          a.right(ng-click="newCard()")
+      .deckgrid(deckgrid, source='cards', cardTemplate='/views/card.html')
+      .no-deckgrid(ng-show="!cards") You have no cards! Add a card or see suggestions, below. (This is where I'm supposed to introduce you to the geekiest notetaking solution ever.)
+      .editor(ng-show="showEditor")
+        And here you are editing something.
