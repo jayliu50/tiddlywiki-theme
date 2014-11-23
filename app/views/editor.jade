@@ -1,25 +1,26 @@
 .editor
-		input(placeholder="Your New Card Title", ng-model="title")
-		ul.controls(ng-hide="hintsOpen")
-			li.formatter(
-				ng-repeat="(label, hint) in hints",
-				ng-click="setHint(hint)"
-				) {{label}}
-			
-		.hints(ng-show="hintsOpen")
-			| {{currentHint.example}}
-			span {{currentHint.explanation}}
-			span.right(ng-click="hintsOpen = false")
-				i.fa-close.fa
-		.code(
-			editable-textarea="currentCardContent"
-			e-rows="30", e-cols="40"
-			ng-bind-html="currentCardContent | wikitext"
-			e-placeholder="Your Content"
-			)
-		.controls
-			.left
-				| delete
-			.right
-				| discard changes
-			
+	input(placeholder="Your New Card Title", ng-model="currentCard.title")
+	ul.controls(ng-hide="hintsOpen")
+		li.formatter(
+			ng-repeat="(label, hint) in hints",
+			ng-click="setHint(hint)"
+			) {{label}}
+		
+	.hints(ng-show="hintsOpen")
+		| {{currentHint.example}}
+		span {{currentHint.explanation}}
+		span.right(ng-click="hintsOpen = false")
+			i.fa-close.fa
+	.code(
+		editable-textarea="currentCard.content"
+		e-rows="30", e-cols="40"
+		ng-bind-html="currentCard.content | wikitext"
+		e-placeholder="Your Content"
+		
+		)
+	.controls
+		.left
+			| delete
+		.right
+			| discard changes
+		

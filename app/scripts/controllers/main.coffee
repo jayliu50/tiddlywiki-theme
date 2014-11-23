@@ -1,17 +1,8 @@
 @app
   .controller 'MainCtrl', ($scope, DataService, ngDialog, $sce, $filter) ->
 
-    # $scope.expanded = true
-
-    randomCard = (count) ->
-      result = []
-
-      for i in [1..count]
-        result.push (
-          random: Math.floor(Math.random() * 100)
-          name: randomName()
-          )
-      result
+    $scope.cards = []
+    $scope.currentCard = null
 
     $scope.newCard = () ->
       something =
@@ -20,18 +11,18 @@
 
       $scope.cards.unshift something
 
+    dialog = null
+
     $scope.editNewCard = () ->
 
-      ngDialog.open(
+      dialog = ngDialog.open(
         template: '/views/editor.html'
+        # closeByDocument: false
         scope: $scope
         );
 
-    $scope.render = () ->
-      debugger
-      $scope.currentCardRenderedContent = $filter('wikitext')($scope.currentCardContent)
-
-    $scope.currentCardContent = "!works"
+      dialog.closePromise.then (data) ->
+        $scope.cards.unshift data.$dialog.scope().currentCard # whatev
 
 
     $scope.hints =

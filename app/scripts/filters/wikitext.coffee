@@ -1,6 +1,7 @@
 @app
 	.filter 'wikitext', ($sce) ->
 	  (input) ->
+	  	return if not input
 	  	html = input
 
 	  	# headers

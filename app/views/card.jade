@@ -1,4 +1,4 @@
 .card(ng-model="card")
   h2.title {{card.title}}
   p
-    div(ng-if="card.renderedContent") {{card.renderedContent}}
+    div(ng-if="card.content", ng-bind-html="card.content | wikitext")
