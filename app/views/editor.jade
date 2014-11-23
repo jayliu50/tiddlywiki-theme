@@ -10,12 +10,11 @@
 			| {{currentHint.example}}
 			span {{currentHint.explanation}}
 			span.right(ng-click="hintsOpen = false")
-				i.fa.fa-close
+				i.fa-close.fa
 		.code(
 			editable-textarea="currentCardContent"
 			e-rows="30", e-cols="40"
-			ng-bind-html="currentCardContent | wikitext" 
-			buttons="no"
+			ng-bind-html="currentCardContent | wikitext"
 			e-placeholder="Your Content"
 			)
 		.controls
