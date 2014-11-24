@@ -10,5 +10,5 @@
 	  	html = html.replace /^!([^\r\n]*)$/gm, '<h2>$1</h2>'
 
 	 		# links
-	 		html = html.replace /\[\[(.*)]\]/gm, """<a onclick="alert('Would have opened a link to $1')">$1</a>"""
+	 		html = html.replace /\[\[(.*)]\]/gm, """<a onclick='alert("Would have opened a link to the page called $1")'>$1</a>"""
 	  	$sce.trustAsHtml html

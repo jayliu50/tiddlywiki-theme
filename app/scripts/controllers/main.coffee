@@ -7,6 +7,7 @@
     dialog = null
 
     $scope.editNewCard = () ->
+      $scope.dirty = false
       $scope.currentCard = {}
 
       dialog = ngDialog.open(
@@ -16,7 +17,9 @@
 
       dialog.closePromise.then (data) ->
         card = data.$dialog.scope().currentCard # whatev
-        $scope.cards.unshift card unless data.value is 'discard' or not card?
+        $scope.cards.unshift card unless data.value is 'discard' or not card? or _.isEmpty card
+
+
 
 
     $scope.hints =
@@ -27,7 +30,10 @@
         example: '[[Your Page]]'
         explanation: 'this will create a link to "Your Page", even if it does not yet exist'
 
-    $scope.editCard = (card) ->
+    $scope.editCard = (card, $event) ->
+      return if $event.target.tagName is 'A'
+
+      $scope.dirty = false
       $scope.currentCard = card
       dialog = ngDialog.open(
         template: '/views/editor.html'
@@ -44,3 +50,10 @@
     $scope.noCards = () ->
       _.compact $scope.cards
       _.isEmpty $scope.cards
+
+    $scope.makeDirty = () ->
+      $scope.dirty = true
+
+    $scope.deleteCard = () ->
+      _.remove $scope.cards, currentCard
+      currentCard = null

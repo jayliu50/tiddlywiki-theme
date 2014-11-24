@@ -54,8 +54,13 @@ h3 {
 }
 
 a {
-	@include underline(white, $color-gray);
+	text-decoration: underline;
+	// @include underline(white, $color-gray);
 	&:hover {
 		text-decoration: none;
 	}
+}
+
+.title {
+	color: darkgreen;
 }

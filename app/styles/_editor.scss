@@ -4,6 +4,7 @@
 
 .code {
 		width: 100%;
+		color: green;
 }
 
 .controls {
@@ -33,4 +34,25 @@
 
 .code {
 	font-family: monospace;
+}
+
+.hint {
+	margin-top: 10px;
+}
+
+.details {
+	font-size: 0.8em;
+}
+
+.save-button {
+	@extend .button;
+	padding: 15px;
+
+	&:hover {
+		color: white;
+	}
+
+	a:hover {
+		color: white;
+	}
 }
