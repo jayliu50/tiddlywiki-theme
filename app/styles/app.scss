@@ -203,157 +203,42 @@ main {
 	clear: both;
 }
 
-a.suggester-tab {
-	position: fixed;
-	bottom: 0px;
-	// right: 2em;
-	background: $color-gray-dark;
-	padding: 0.5em 1em;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	color: $color-foreground;
-
-	&:hover {
-		background: $color-gray-darker;
-		text-decoration: none;
+.inline {
+	li {
+		display: inline-block;
+		margin-right: 12px;
+	}
+	li:last-child {
+		display: initial;
+		margin-right: initial;
 	}
 }
 
+.introduction {
+	clear: both;
 
-.suggester {
-	bottom: 0;
-	left: 0;
-	right: 0;
-	color: $color-foreground;
-	position: fixed;
-	padding: 0.5em;
-	background: $color-gray-dark;
-
-	.suggestion {
-
-		padding-top: 1em;
-		padding-bottom: 4em;
-		position: relative;
-
-		.controls {
-			position: absolute;
-			bottom: 5px;
-			left: 5px;
-			right: -33%; // not sure why this works
-		}
-
-		.controls li {
-			@include span(3 at 4 of 12 no-gutter);
-			display: none;
-		}
+	p {
+		margin-left: 30px;
+	}
+	ul {
+		margin-left: 30px;
 	}
 }
 
-li.suggestion {
-	border: 1px $color-gray solid;
-	@include gallery(3 at 4 of 12);
-	& > div {
-		margin: 1em;
-	}
-
-	&:hover {
-		background: $color-gray-darker;
-
-		& .controls li {
-			display: block;
-		}
-	}
-}
-
-.side-tab {
-	position: fixed;
-	right: -120px + 12px;
-	background: $color-gray-dark;
-	padding: 0.5em 1em;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-	color: $color-foreground;
-	width: 120px;
-	transition: 0.25s all ease-in-out;
-
-	&:hover {
-		right: 0;
-		text-decoration: none;
-		background: $color-gray-darker;
-	}
-
-	span {
-		margin-left: 12px;
-	}
-}
-
-.discussion-tab {
-	top: 7em;
-}
-
-.resources-tab {
-	top: 9em;
-}
-
-.history-tab {
-	top: 11em;
-}
-
-.notes-tab {
-	top: 13em;
-}
-
-
-.side-bar {
-	position: fixed;
-	top: 7em;
-	right: 0;
-	bottom: 0;
-	z-index: 2;
-	background: $color-gray-light;
-	width: 30em;
-	padding: 1em;
-}
-
-.discussion-tab-body {
-	bottom: 10px;
-}
-
-.chats {
-	padding: 1em;
-}
-
-.chat-left {
-	text-align: left;
+.panel {
+	background: $color-gray-faint;
+	padding: 30px;
+	border-radius: 5px;
 
 }
 
-.chat-right {
-	text-align: right;
-}
 
-.message {
-	line-height: 2em;
-	color: black;
-}
+
 
 .by {
 	font-size: 0.8em;
 }
 
-.chat-input {
-	width: 90%;
-	@include horizontal-center();
-	display: block;
-}
-
-.resources {
-	.controls {
-		li {
-			display: inline-block;
-		}
-	}
-}
 
 .history {
 	padding-top: 2em;
@@ -376,14 +261,5 @@ li.suggestion {
 			background: $color-gray-light;
 			padding: 0 0.7em;
 		}
-	}
-}
-
-.notes {
-	textarea {
-		clear: both;
-		display: block;
-		height: 100%;
-		width: 100%;
 	}
 }

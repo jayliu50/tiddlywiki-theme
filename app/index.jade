@@ -28,10 +28,42 @@ html(lang="en")
             span Export
           
     main
-      ul.controls
-        li
-          a.right(ng-click="newCard()")
       .deckgrid(deckgrid, source='cards', cardTemplate='/views/card.html')
-      .no-deckgrid(ng-show="!cards") You have no cards! Add a card or see suggestions, below. (This is where I'm supposed to introduce you to the geekiest notetaking solution ever.)
-      .editor(ng-show="showEditor")
-        And here you are editing something.
+      .no-deckgrid(ng-show="noCards()")
+        | You have no cards! 
+        a(ng-click="editNewCard()") Add one
+        |  to get started.
+      .introduction.panel(ng-show="noCards()")
+        h1 Welcome to TiddlyWiki!
+        p This is a system for organizing information in your own way, no matter how complicated
+        p With TiddlyWiki, you get the following benefits:
+          ul
+            li
+              p
+                strong Portable. 
+                | You can export this entire site, 
+                em including 
+                | your data, into a self-contained HTML file and open it on any browser
+            li
+              p
+                strong Compatible. 
+                | It works across all platforms. any browser will open it
+            li
+              p 
+                strong It's Free. 
+                | You don't need to purchase anything or pay a fee to use it.
+        h1 What do I need to know to started?
+        p What you write in your cards will be in what is called wikitext, which gives you a number of benefits:
+        
+          ul
+            li
+              p
+                strong Quick linking. 
+                | Though TiddlyWiki acts more like a note-taking application, you get the benefit of Wikis too. This includes the ability to quickly create pages. Typing  
+                span.code
+            li
+              p
+                strong Quick formatting. 
+                | By typing in special symbols, you can specify the formatting of the contents of your Tiddlers. See the 
+                a(href="http://tiddlywiki.tiddlyspace.com/TiddlyWiki%20Markup", target="_blank") reference guide
+                |  for more information. 

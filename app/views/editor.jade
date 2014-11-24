@@ -1,31 +1,51 @@
-.editor
-	input.title(
-		type="text"
-		ng-model="currentCard.title"
-		placeholder="Your New Card Title"
-		)
-	ul.controls(ng-hide="hintsOpen")
-		li.formatter(
-			ng-repeat="(label, hint) in hints",
-			ng-click="setHint(hint)"
-			) {{label}}
-		
-	.hints(ng-show="hintsOpen")
-		| {{currentHint.example}}
-		span {{currentHint.explanation}}
-		span.right(ng-click="hintsOpen = false")
-			i.fa-close.fa
-	.code(
-		name="something"
-		editable-textarea="currentCard.content"
-		e-rows="30", e-cols="40"
-		ng-bind-html="currentCard.content | wikitext"
-		e-placeholder="Your Content"
-		oncancel="shouldIClose()"
-		)
-	.controls
-		.left
-			| delete
-		.right
-			a(ng-click="closeThisDialog('discard')") discard changes
-		
+form.editor(
+  name="editor"
+  )
+  input.like-h2(
+    type="text"
+    ng-model="currentCard.title"
+    placeholder="Your New Card Title"
+    )
+  ul.inline.controls(ng-hide="showHint")
+    li
+      strong Formatting Hints:
+    li(
+      ng-repeat="(label, hint) in hints",
+      ng-click="setHint(hint)"
+      ) {{label}}
+    
+  .hint(ng-show="showHint")
+    .code {{currentHint.example}}
+    .details {{currentHint.explanation || ''}}
+      .right(ng-click="showHint = false")
+        i.fa-times.fa
+  div
+    textarea.contentField(
+      ng-model="currentCard.content"
+      rows="10", cols="40"
+      placeholder="Your Content"
+      ng-hide="previewOn"
+      )
+  .contentPreview(
+    ng-show="previewOn"
+    ng-click="previewOn = false"
+    ng-bind-html="currentCard.content | wikitext"
+    )
+  div
+    button(
+      ng-show="currentCard.content"
+      ng-click="previewOn = true"
+      ng-hide="previewOn"
+      ) Preview
+  .controls
+    .left
+      ul.inline
+        li
+            a(ng-click="closeThisDialog('discard')") discard
+        li
+          a delete
+    .right
+      ul.inline
+        li
+          a(ng-click="closeThisDialog('save')") save
+      

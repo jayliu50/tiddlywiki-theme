@@ -8,7 +8,9 @@
 
 .controls {
 	li.formatter {
-		display: inline;
+		display: inline-block;
+		margin-right: 10px;
+		cursor: pointer;
 	}
 }
 
@@ -22,3 +24,19 @@
 	width: 300px;
 	height: 300px;
 }
+
+.contentField {
+	width: 100%;
+}
+
+.contentPreview {
+	cursor: pointer;
+	padding: 10px;
+	border: 1px solid $color-gray;
+	margin: 5px 0;
+}
+
+.code {
+	font-family: monospace;
+}
+

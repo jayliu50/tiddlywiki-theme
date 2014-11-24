@@ -1,15 +1,8 @@
 @app
-  .controller 'MainCtrl', ($scope, DataService, ngDialog, $sce, $filter, $rootScope) ->
+  .controller 'MainCtrl', ($scope, DataService, ngDialog, $sce, $filter) ->
 
     $scope.cards = []
     $scope.currentCard = null
-
-    $scope.newCard = () ->
-      something =
-        title: ''
-        content: ''
-
-      $scope.cards.unshift something
 
     dialog = null
 
@@ -17,29 +10,36 @@
 
       dialog = ngDialog.open(
         template: '/views/editor.html'
-        # closeByDocument: false
         scope: $scope
         );
 
       dialog.closePromise.then (data) ->
         card = data.$dialog.scope().currentCard # whatev
-        $scope.cards.unshift card unless data.value is 'discard' and not card?
+        $scope.cards.unshift card unless data.value is 'discard' or not card?
 
 
     $scope.hints =
-          'Header':
-            example: '!! Heading 2'
-            explanation: 'This will create a 2nd level heading called "Heading 2". (The two ! marks signify 2nd level)'
-          'Link':
-            example: '[[Your Page]]'
-            explanation: 'this will create a link to "Your Page", even if it does not yet exist'
+      'Headers':
+        example: '!! Heading 2'
+        explanation: 'This will create a 2nd level heading called "Heading 2". (The two ! marks signify 2nd level)'
+      'Links':
+        example: '[[Your Page]]'
+        explanation: 'this will create a link to "Your Page", even if it does not yet exist'
+
+    $scope.editCard = (card) ->
+      $scope.currentCard = card
+      dialog = ngDialog.open(
+        template: '/views/editor.html'
+        scope: $scope
+        );
+
+    $scope.showHint = false
 
     $scope.setHint = (hint) ->
-      $scope.currentHint = $scope.hints[hint]
+      $scope.currentHint = hint
+      $scope.showHint = true
+      return
 
-    # hokey way to get the edit to open
-    $rootScope.$on 'ngDialog.opened', (e, $dialog) ->
-      angular.element('.editable-click').click()
-
-    $scope.shouldIClose = () ->
-      debugger
+    $scope.noCards = () ->
+      _.compact $scope.cards
+      _.isEmpty $scope.cards
