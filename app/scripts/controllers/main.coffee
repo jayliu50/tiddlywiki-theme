@@ -1,5 +1,5 @@
 @app
-  .controller 'MainCtrl', ($scope, DataService, ngDialog, $sce, $filter) ->
+  .controller 'MainCtrl', ($scope, DataService, ngDialog, $sce, $filter, $rootScope) ->
 
     $scope.cards = []
     $scope.currentCard = null
@@ -36,3 +36,10 @@
 
     $scope.setHint = (hint) ->
       $scope.currentHint = $scope.hints[hint]
+
+    # hokey way to get the edit to open
+    $rootScope.$on 'ngDialog.opened', (e, $dialog) ->
+      angular.element('.editable-click').click()
+
+    $scope.shouldIClose = () ->
+      debugger

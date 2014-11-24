@@ -1,5 +1,9 @@
 .editor
-	input(placeholder="Your New Card Title", ng-model="currentCard.title")
+	input.title(
+		type="text"
+		ng-model="currentCard.title"
+		placeholder="Your New Card Title"
+		)
 	ul.controls(ng-hide="hintsOpen")
 		li.formatter(
 			ng-repeat="(label, hint) in hints",
@@ -12,11 +16,12 @@
 		span.right(ng-click="hintsOpen = false")
 			i.fa-close.fa
 	.code(
+		name="something"
 		editable-textarea="currentCard.content"
 		e-rows="30", e-cols="40"
 		ng-bind-html="currentCard.content | wikitext"
 		e-placeholder="Your Content"
-		
+		oncancel="shouldIClose()"
 		)
 	.controls
 		.left
