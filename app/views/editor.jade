@@ -17,7 +17,7 @@ form.editor(
   .hint(ng-show="showHint")
     .code {{currentHint.example}}
     .details {{currentHint.explanation || ''}}
-      .right(ng-click="showHint = false")
+      .right(ng-click="setHint()")
         i.fa-times.fa
   div
     textarea.contentField(

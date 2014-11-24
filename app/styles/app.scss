@@ -232,34 +232,6 @@ main {
 
 }
 
-
-
-
-.by {
-	font-size: 0.8em;
-}
-
-
-.history {
-	padding-top: 2em;
-
-	li {
-
-	}
-}
-
-.date {
-	border-top: 1px dashed white;
-	margin-top: 1em;
-	p {
-		text-align: center;
-		color: white;
-		margin-top: -0.5em;
-		display: block;
-
-		span {
-			background: $color-gray-light;
-			padding: 0 0.7em;
-		}
-	}
+.controls {
+	cursor: pointer;
 }

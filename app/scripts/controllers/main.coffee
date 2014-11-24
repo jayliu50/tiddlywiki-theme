@@ -37,7 +37,7 @@
 
     $scope.setHint = (hint) ->
       $scope.currentHint = hint
-      $scope.showHint = true
+      $scope.showHint = hint?
       return
 
     $scope.noCards = () ->
