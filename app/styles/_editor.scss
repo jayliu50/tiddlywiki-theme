@@ -20,17 +20,12 @@
 	}
 }
 
-.preview {
-	width: 300px;
-	height: 300px;
-}
-
 .contentField {
 	width: 100%;
 }
 
 .contentPreview {
-	cursor: pointer;
+	cursor: text;
 	padding: 10px;
 	border: 1px solid $color-gray;
 	margin: 5px 0;

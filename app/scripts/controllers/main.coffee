@@ -7,6 +7,7 @@
     dialog = null
 
     $scope.editNewCard = () ->
+      $scope.currentCard = {}
 
       dialog = ngDialog.open(
         template: '/views/editor.html'
