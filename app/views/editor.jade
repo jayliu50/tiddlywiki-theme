@@ -12,7 +12,8 @@ form.editor(
     li(
       ng-repeat="(label, hint) in hints",
       ng-click="setHint(hint)"
-      ) {{label}}
+      )
+      a {{label}}
     
   .hint(ng-show="showHint")
     .code {{currentHint.example}}
@@ -27,7 +28,7 @@ form.editor(
       ng-hide="previewOn"
       ng-change="makeDirty()"
       )
-  .contentPreview(
+  .content-preview(
     ng-show="previewOn"
     ng-click="previewOn = false"
     ng-bind-html="currentCard.content | wikitext"
@@ -39,7 +40,7 @@ form.editor(
       ng-hide="previewOn"
       ) Preview
   .controls
-    .left
+    .right
       ul.inline
         li(ng-show="dirty")
             a(ng-click="closeThisDialog('discard')") discard changes

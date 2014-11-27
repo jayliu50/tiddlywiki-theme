@@ -30,6 +30,8 @@ img {
 	border: 1px solid $color-gray-light;
 	padding: 1em;
 	margin: 3px;
+	min-height: 200px;
+	transition: border-color 0.7s;
 
 	.cta {
 		display: none;
@@ -38,6 +40,7 @@ img {
 	}
 
 	&:hover {
+		border-color: $color-gray-darker;
 		.cta {
 			display: block;
 		}
@@ -216,6 +219,8 @@ main {
 
 .introduction {
 	clear: both;
+	margin-top: 30px;
+	@include container(60em);
 
 	p {
 		margin-left: 30px;

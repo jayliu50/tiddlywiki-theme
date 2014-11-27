@@ -24,8 +24,12 @@ html(lang="en")
             | 
             | Add
           input.omnibar(placeholder="Open")
-          .button.export
-            span Export
+          a.export(title="Export entire site"
+            onclick="alert('This would have saved your entire site as an HTML file')"
+            )
+            | Export Data
+            | 
+            i.fa.fa-download.fa-lg.right
           
     main
       .deckgrid(deckgrid, source='cards', cardTemplate='/views/card.html')
@@ -33,7 +37,9 @@ html(lang="en")
         | You have no cards! 
         a(ng-click="editNewCard()") Add one
         |  to get started.
-      .introduction.panel(ng-show="noCards()")
+    aside.introduction.panel(ng-hide="dismissedIntro")
+        a.right(ng-click="dismissedIntro = true")
+          i.fa.fa-times 
         h1 Welcome to TiddlyWiki!
         p This is a system for organizing information in your own way, no matter how complicated
         p With TiddlyWiki, you get the following benefits:

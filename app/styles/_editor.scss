@@ -25,11 +25,19 @@
 	width: 100%;
 }
 
-.contentPreview {
+.content-preview {
 	cursor: text;
 	padding: 10px;
-	border: 1px solid $color-gray;
+	border-width: 1px;
+	border-style: solid;
+	border-color: $color-gray-lighter;
 	margin: 5px 0;
+	transition: background, border-color 0.7s;
+
+	&:hover {
+		background: white;
+		border-color: $color-gray-darker;
+	}
 }
 
 .code {
