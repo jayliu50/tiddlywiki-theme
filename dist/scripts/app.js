@@ -1,18 +1,22 @@
 this.app = angular.module('prototypeAngularApp', ['placeholders.img', 'placeholders.txt', 'akoenig.deckgrid', 'duScroll', 'angular-inview', 'ngDialog', 'xeditable']);
 
 this.app.controller('MainCtrl', function($scope, DataService, ngDialog, $sce, $filter) {
-  var dialog;
+  var dialog, openDialog;
   $scope.cards = [];
   $scope.currentCard = null;
   dialog = null;
+  openDialog = function() {
+    return ngDialog.open({
+      template: '/views/editor.html',
+      scope: $scope,
+      closeByDocument: false
+    });
+  };
+  $scope.backupCard = null;
   $scope.editNewCard = function() {
     $scope.dirty = false;
     $scope.currentCard = {};
-    dialog = ngDialog.open({
-      template: '/views/editor.html',
-      scope: $scope
-    });
-    return dialog.closePromise.then(function(data) {
+    return openDialog().closePromise.then(function(data) {
       var card;
       card = data.$dialog.scope().currentCard;
       if (!(data.value === 'discard' || (card == null) || _.isEmpty(card))) {
@@ -34,11 +38,13 @@ this.app.controller('MainCtrl', function($scope, DataService, ngDialog, $sce, $f
     if ($event.target.tagName === 'A') {
       return;
     }
+    $scope.backupCard = _.cloneDeep(card);
     $scope.dirty = false;
     $scope.currentCard = card;
-    return dialog = ngDialog.open({
-      template: '/views/editor.html',
-      scope: $scope
+    return openDialog().closePromise.then(function(data) {
+      if (data.value === 'discard') {
+        return angular.extend(card, data.$dialog.scope().backupCard);
+      }
     });
   };
   $scope.showHint = false;
