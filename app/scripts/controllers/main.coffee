@@ -6,20 +6,22 @@
 
     dialog = null
 
+    openDialog = () ->
+      ngDialog.open(
+        template: '/views/editor.html'
+        scope: $scope
+        closeByDocument: false
+        );
+
+    $scope.backupCard = null
+
     $scope.editNewCard = () ->
       $scope.dirty = false
       $scope.currentCard = {}
 
-      dialog = ngDialog.open(
-        template: '/views/editor.html'
-        scope: $scope
-        );
-
-      dialog.closePromise.then (data) ->
+      openDialog().closePromise.then (data) ->
         card = data.$dialog.scope().currentCard # whatev
         $scope.cards.unshift card unless data.value is 'discard' or not card? or _.isEmpty card
-
-
 
 
     $scope.hints =
@@ -33,12 +35,15 @@
     $scope.editCard = (card, $event) ->
       return if $event.target.tagName is 'A'
 
+      $scope.backupCard = _.cloneDeep card
+
       $scope.dirty = false
       $scope.currentCard = card
-      dialog = ngDialog.open(
-        template: '/views/editor.html'
-        scope: $scope
-        );
+
+      openDialog().closePromise.then (data) ->
+
+        if data.value is 'discard'
+          angular.extend card, data.$dialog.scope().backupCard
 
     $scope.showHint = false
 

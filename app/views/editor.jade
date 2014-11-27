@@ -5,6 +5,7 @@ form.editor(
     type="text"
     ng-model="currentCard.title"
     placeholder="Your New Card Title"
+    ng-change="makeDirty()"
     )
   ul.inline.controls.hint(ng-hide="showHint")
     li
@@ -21,26 +22,38 @@ form.editor(
       .right(ng-click="setHint()")
         i.fa-times.fa
   div
-    textarea.contentField(
+    button(
+      ng-click="previewOn = !previewOn"
+      ng-show="currentCard.content"
+      )
+      span(
+        ng-hide="previewOn"
+        ) Preview
+      span(
+        ng-show="previewOn"
+        ) Edit
+  div
+    textarea.content-field(
       ng-model="currentCard.content"
       rows="10", cols="40"
       placeholder="Your Content"
       ng-hide="previewOn"
       ng-change="makeDirty()"
       )
-  .content-preview(
-    ng-show="previewOn"
-    ng-click="previewOn = false"
-    ng-bind-html="currentCard.content | wikitext"
-    )
-  div
-    button(
-      ng-show="currentCard.content"
-      ng-click="previewOn = true"
-      ng-hide="previewOn"
-      ) Preview
+    .content-preview(
+      ng-show="previewOn"
+      ng-click="previewOn = false"
+      ng-bind-html="currentCard.content | wikitext"
+      )
   .controls
     .right
+      ul.inline
+        li
+          a(ng-click="closeThisDialog();")
+           i.fa.fa-floppy-o
+           | 
+           | save
+    .left
       ul.inline
         li(ng-show="dirty")
             a(ng-click="closeThisDialog('discard')") discard changes
