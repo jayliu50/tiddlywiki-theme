@@ -32,7 +32,7 @@ html(lang="en")
             i.fa.fa-download.fa-lg.right
           
     main
-      .deckgrid(deckgrid, source='cards', cardTemplate='/views/card.html')
+      .deckgrid(deckgrid, source='cards', cardTemplate='views/card.html')
       .no-deckgrid(ng-show="noCards()")
         | You have no cards! 
         a(ng-click="editNewCard()") Add one

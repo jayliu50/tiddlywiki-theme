@@ -8,7 +8,7 @@
 
     openDialog = () ->
       ngDialog.open(
-        template: '/views/editor.html'
+        template: 'views/editor.html'
         scope: $scope
         closeByDocument: false
         );
