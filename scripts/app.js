@@ -9,7 +9,7 @@ this.app.controller('MainCtrl', function($scope, DataService, ngDialog, $sce, $f
     $scope.dirty = false;
     $scope.currentCard = {};
     dialog = ngDialog.open({
-      template: '/views/editor.html',
+      template: 'views/editor.html',
       scope: $scope
     });
     return dialog.closePromise.then(function(data) {
@@ -37,7 +37,7 @@ this.app.controller('MainCtrl', function($scope, DataService, ngDialog, $sce, $f
     $scope.dirty = false;
     $scope.currentCard = card;
     return dialog = ngDialog.open({
-      template: '/views/editor.html',
+      template: 'views/editor.html',
       scope: $scope
     });
   };
@@ -62,7 +62,7 @@ this.app.controller('MainCtrl', function($scope, DataService, ngDialog, $sce, $f
 
 this.app.directive('customDirective', function() {
   return {
-    templateUrl: '/views/customView.html',
+    templateUrl: 'views/customView.html',
     restrict: 'E',
     link: function(scope, element, attrs) {
       return element.text('this is the customDirective directive');
