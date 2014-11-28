@@ -49,7 +49,8 @@ form.editor(
     .right
       ul.inline
         li
-          a(ng-click="closeThisDialog();")
+          a(ng-click="closeThisDialog();"
+            ng-show="dirty")
            i.fa.fa-floppy-o
            | 
            | save

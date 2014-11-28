@@ -15,25 +15,35 @@
 
     $scope.backupCard = null
 
-    $scope.editNewCard = () ->
+    $scope.editNewCard = (data = {}) ->
       $scope.dirty = false
-      $scope.currentCard = {}
+      $scope.currentCard = data
 
       openDialog().closePromise.then (data) ->
         card = data.$dialog.scope().currentCard # whatev
         $scope.cards.unshift card unless data.value is 'discard' or not card? or _.isEmpty card
 
+    $scope.openOrCreate = (pageTitle) ->
+      cardIndex = _.findIndex $scope.cards, {title: pageTitle}
+      if cardIndex != -1
+        $scope.editCard($scope.cards[cardIndex])
+      else
+        $scope.dirty = true
+        $scope.editNewCard({title: pageTitle})
 
     $scope.hints =
       'Headers':
         example: '!! Heading 2'
-        explanation: 'This will create a 2nd level heading called "Heading 2". (The two ! marks signify 2nd level)'
-      'Links':
+        explanation: 'This will create a 2nd level heading called "Heading 2". (The two ! marks signify 2nd level, three !s signify 3rd level, and so on)'
+      'Link (Internal)':
         example: '[[Your Page]]'
-        explanation: 'this will create a link to "Your Page", even if it does not yet exist'
+        explanation: 'This will create a link to "Your Page", even if it does not yet exist'
+      'Link (External)':
+        example: '[[Some other page|http://thatotherpage.com]]'
+        explanation: 'This will create link to a page on the Internet'
 
     $scope.editCard = (card, $event) ->
-      return if $event.target.tagName is 'A'
+      return if $event && $event.target.tagName is 'A'
 
       $scope.backupCard = _.cloneDeep card
 
