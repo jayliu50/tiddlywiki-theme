@@ -22,16 +22,18 @@ $susy: (
 @import "ngdialog";
 @import "editor";
 
+
 img {
 	max-width: 100%;
 }
 
 .card {
-	border: 1px solid $color-gray-light;
+	border: 1px solid $color-gray-lighter;
 	padding: 1em;
 	margin: 3px;
 	min-height: 200px;
 	transition: border-color 0.7s;
+	cursor: pointer;
 
 	.cta {
 		display: none;

@@ -1,7 +1,7 @@
-form.editor(
+form.editor-dialog(
   name="editor"
   )
-  input.like-h2(
+  input.like-h2.content-field(
     type="text"
     ng-model="currentCard.title"
     placeholder="Your New Card Title"
@@ -21,28 +21,25 @@ form.editor(
     .details {{currentHint.explanation || ''}}
       .right(ng-click="setHint()")
         i.fa-times.fa
-  div
+  div.preview-button
     button(
       ng-click="previewOn = !previewOn"
       ng-show="currentCard.content"
       )
       span(
         ng-hide="previewOn"
-        ) Preview
-      span(
+        ) Show Preview
+      i.fa.fa-times(
         ng-show="previewOn"
-        ) Edit
-  div
+        ) 
+  div.editor(ng-class="{'no-preview': !previewOn}")
     textarea.content-field(
       ng-model="currentCard.content"
       rows="10", cols="40"
       placeholder="Your Content"
-      ng-hide="previewOn"
       ng-change="makeDirty()"
       )
     .content-preview(
-      ng-show="previewOn"
-      ng-click="previewOn = false"
       ng-bind-html="currentCard.content | wikitext"
       )
   .controls
@@ -53,7 +50,7 @@ form.editor(
             ng-show="dirty")
            i.fa.fa-floppy-o
            | 
-           | save
+           | save and close
     .left
       ul.inline
         li(ng-show="dirty")

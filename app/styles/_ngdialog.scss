@@ -1,5 +1,7 @@
 .ngdialog.ngdialog-theme-default .ngdialog-content {
+	@extend %font;
 	width: 80%;
 	max-width: 800px;
 	background: white;
+
 }

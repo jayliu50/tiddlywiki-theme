@@ -10,7 +10,7 @@
       ngDialog.open(
         template: 'views/editor.html'
         scope: $scope
-        closeByDocument: false
+        # closeByDocument: false
         );
 
     $scope.backupCard = null
@@ -23,24 +23,24 @@
         card = data.$dialog.scope().currentCard # whatev
         $scope.cards.unshift card unless data.value is 'discard' or not card? or _.isEmpty card
 
-    $scope.openOrCreate = (pageTitle) ->
-      cardIndex = _.findIndex $scope.cards, {title: pageTitle}
+    $scope.openOrCreate = (cardTitle) ->
+      cardIndex = _.findIndex $scope.cards, {title: cardTitle}
       if cardIndex != -1
         $scope.editCard($scope.cards[cardIndex])
       else
         $scope.dirty = true
-        $scope.editNewCard({title: pageTitle})
+        $scope.editNewCard({title: cardTitle})
 
     $scope.hints =
       'Headers':
-        example: '!! Heading 2'
-        explanation: 'This will create a 2nd level heading called "Heading 2". (The two ! marks signify 2nd level, three !s signify 3rd level, and so on)'
+        example: '!! My Cat'
+        explanation: 'This will create a 2nd level heading called "My Cat". (The two ! marks signify a 2nd level header, three !s signify 3rd level, and so on)'
       'Link (Internal)':
-        example: '[[Your Page]]'
-        explanation: 'This will create a link to "Your Page", even if it does not yet exist'
+        example: '[[Adorable Pets]]'
+        explanation: 'This will create a link to a card called "Adorable Pets", even if it does not yet exist'
       'Link (External)':
-        example: '[[Some other page|http://thatotherpage.com]]'
-        explanation: 'This will create link to a page on the Internet'
+        example: '[[additional information on cats|http://cats.com]]'
+        explanation: 'This will make the text "additional information on cats" link to "http://cats.com"'
 
     $scope.editCard = (card, $event) ->
       return if $event && $event.target.tagName is 'A'
@@ -70,5 +70,5 @@
       $scope.dirty = true
 
     $scope.deleteCard = () ->
-      _.remove $scope.cards, currentCard
-      currentCard = null
+      _.remove $scope.cards, $scope.currentCard
+      $scope.currentCard = null

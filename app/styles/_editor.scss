@@ -1,10 +1,14 @@
-.editor {
+.editor-dialog {
 	padding: 10px 20px 20px;
+
+	input {
+		width: 100%;
+	}
 }
 
 .code {
 		width: 100%;
-		color: green;
+		color: darkblue;
 }
 
 .controls {
@@ -17,32 +21,55 @@
 
 .preview-button {
 	text-align: right;
+	clear: both;
 }
 
+$susy: (
+	gutters: 1/8
+);
+
 .editor {
-	input {
-		width: 100%;
+	@include container();
+	overflow: hidden;
+}
+
+.no-preview {
+	.content-field {
+		@include span(1 of 1);
 	}
+
+	.content-preview {
+		width: 0;
+		height: 0;
+		overflow: hidden;
+		transition: width, 0.3s;
+	}
+}
+
+%editor-box {
+	width: 100%;
+	margin: 5px 0;
+	border-width: 1px;
+	border-style: solid;
+	transition: width, 0.3s;
 }
 
 .content-field {
-	width: 100%;
-	margin: 5px 0;
+	@extend %editor-box;
+	@include span(1 at 1 of 2);
+	// transition: border-color, 0.7s;
+	border-color: $color-gray-lighter;
+
+	&:hover {
+		border-color: $color-gray-darker;
+	}
+
 }
 
 .content-preview {
-	cursor: text;
-	padding: 10px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: $color-gray-lighter;
-	margin: 5px 0;
-	transition: background, border-color 0.7s;
-
-	&:hover {
-		background: white;
-		border-color: $color-gray-darker;
-	}
+	@extend %editor-box;
+	border-color: transparent;
+	@include span(1 at 2 of 2);
 }
 
 .code {
@@ -51,6 +78,7 @@
 
 .hint {
 	margin-top: 10px;
+	clear: both;
 }
 
 .details {

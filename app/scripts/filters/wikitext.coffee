@@ -13,4 +13,7 @@
 	 		html = html.replace /\[\[([^|\]]+)\]\]/gm, """<a ng-click="mother.openOrCreate('$1')">$1</a>"""
 	 		html = html.replace /\[\[([^|\]]+)\|([^|]+)\]\]/gm, """<a href='$2' target='_blank'>$1</a>"""
 	 		# html = html.replace /\[\[([^|]+)\|http([^|]+)\]\]/gm, """<a href='http$2' target='_blank'>$1</a>"""
+
+	 		html = html.replace /\r\n/gm, '<br>'
+	 		html = html.replace /\n/gm, '<br>'
 	  	$sce.trustAsHtml(html)
