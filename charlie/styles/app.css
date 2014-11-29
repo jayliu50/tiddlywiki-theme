@@ -1,0 +1,716 @@
+@import url(font-awesome.css);
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700");
+/* line 5, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1,
+.info-collapsed .name, h2, .like-h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 1, ../../../../../.rvm/gems/ruby-2.1.2/gems/toolkit-2.6.0/stylesheets/toolkit/_kickstart.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 11, ../../../../../.rvm/gems/ruby-2.1.2/gems/toolkit-2.6.0/stylesheets/toolkit/_kickstart.scss */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 2, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_grid.scss */
+.deckgrid {
+  transition: all 500ms;
+}
+
+/* line 6, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_grid.scss */
+.deckgrid[deckgrid]::before {
+  /* Specifies that the grid should have a maximum of 4 columns. Each column will have the classes 'column' and 'column-1-4' */
+  content: '3 .column.column-1-3';
+  font-size: 0;
+  /* See https://github.com/akoenig/angular-deckgrid/issues/14#issuecomment-35728861 */
+  visibility: hidden;
+}
+
+/* line 13, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_grid.scss */
+.deckgrid .column {
+  float: left;
+}
+
+/* line 17, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_grid.scss */
+.deckgrid .column-1-3 {
+  width: 33%;
+}
+
+/* line 12, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_colors.scss */
+.gray-1 {
+  color: #d9d9d9;
+}
+
+/* line 16, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_colors.scss */
+.bg-gray-1 {
+  background-color: #d9d9d9;
+}
+
+/* line 12, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_colors.scss */
+.gray-2 {
+  color: #b3b3b3;
+}
+
+/* line 16, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_colors.scss */
+.bg-gray-2 {
+  background-color: #b3b3b3;
+}
+
+/* line 12, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_colors.scss */
+.gray-3 {
+  color: #8c8c8c;
+}
+
+/* line 16, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_colors.scss */
+.bg-gray-3 {
+  background-color: #8c8c8c;
+}
+
+/* line 12, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_colors.scss */
+.gray-4 {
+  color: #666666;
+}
+
+/* line 16, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_colors.scss */
+.bg-gray-4 {
+  background-color: #666666;
+}
+
+/* line 12, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_colors.scss */
+.gray-5 {
+  color: #404040;
+}
+
+/* line 16, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_colors.scss */
+.bg-gray-5 {
+  background-color: #404040;
+}
+
+/* line 12, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_colors.scss */
+.gray-6 {
+  color: #1a1a1a;
+}
+
+/* line 16, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_colors.scss */
+.bg-gray-6 {
+  background-color: #1a1a1a;
+}
+
+/* line 4, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-content, body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* line 9, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+.subdued {
+  font-size: 1em;
+  font-variant: small-caps;
+  font-weight: 400;
+  color: #0000fe;
+}
+
+/* line 16, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+.inverted {
+  color: white;
+}
+
+/* line 20, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+p {
+  line-height: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* line 25, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+strong {
+  font-weight: 700;
+}
+
+/* line 29, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+em {
+  font-style: italic;
+}
+
+/* line 33, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+h1, .info-collapsed .name {
+  font-size: 3em;
+  line-height: 1.5em;
+  margin-top: 0.5em;
+}
+
+/* line 39, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+h1:first-child, .info-collapsed .name:first-child {
+  margin-top: 0;
+}
+
+/* line 43, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+h2, .like-h2 {
+  font-size: 2.4em;
+  line-height: 1.2em;
+  margin-top: 0.4em;
+}
+
+/* line 53, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+h3 {
+  font-size: 2em;
+  line-height: 1em;
+  margin-top: 0.3em;
+}
+
+/* line 59, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+h4 {
+  font-size: 1.5em;
+  line-height: 0.75em;
+  margin-top: 0.3em;
+  font-weight: 700;
+}
+
+/* line 66, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+h5 {
+  font-size: 1em;
+  line-height: 0.5em;
+  margin-top: 0.3em;
+  font-weight: 700;
+}
+
+/* line 73, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+a {
+  text-decoration: underline;
+}
+/* line 76, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+a:hover {
+  text-decoration: none;
+}
+
+/* line 81, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_typography.scss */
+.title {
+  color: darkgreen;
+}
+
+/* line 1, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_borders.scss */
+.panel, .feature {
+  border-radius: 5px;
+  margin: 10px;
+  padding: 30px 40px;
+}
+
+/* line 7, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_borders.scss */
+.feature {
+  background: #f9f9f9;
+}
+
+/* line 1, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_ngdialog.scss */
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  width: 80%;
+  max-width: 800px;
+  background: white;
+}
+
+/* line 1, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.editor-dialog {
+  padding: 10px 20px 20px;
+}
+/* line 4, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.editor-dialog input {
+  width: 100%;
+}
+
+/* line 9, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.code {
+  width: 100%;
+  color: darkblue;
+}
+
+/* line 15, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.controls li.formatter {
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* line 22, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.preview-button {
+  text-align: right;
+  clear: both;
+}
+
+/* line 31, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.editor {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+/* line 12, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+.editor:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* line 37, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.no-preview .content-field {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+/* line 41, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.no-preview .content-preview {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition: width, 0.3s;
+}
+
+/* line 49, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.content-field, .content-preview {
+  width: 100%;
+  margin: 5px 0;
+  border-width: 1px;
+  border-style: solid;
+  transition: width, 0.3s;
+}
+
+/* line 57, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.content-field {
+  width: 47.05882%;
+  float: left;
+  margin-right: 5.88235%;
+  border-color: #e4e4e4;
+}
+/* line 63, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.content-field:hover {
+  border-color: #1a1a1a;
+}
+
+/* line 69, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.content-preview {
+  border-color: transparent;
+  width: 47.05882%;
+  float: right;
+  margin-right: 0;
+}
+
+/* line 75, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.code {
+  font-family: monospace;
+}
+
+/* line 79, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.hint {
+  margin-top: 10px;
+  clear: both;
+}
+
+/* line 84, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.details {
+  font-size: 0.8em;
+}
+
+/* line 88, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.save-button {
+  padding: 15px;
+}
+/* line 92, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.save-button:hover {
+  color: white;
+}
+/* line 96, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/_editor.scss */
+.save-button a:hover {
+  color: white;
+}
+
+/* line 26, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 30, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card {
+  border: 1px solid #e4e4e4;
+  padding: 1em;
+  margin: 3px;
+  min-height: 200px;
+  transition: border-color 0.7s;
+  cursor: pointer;
+  position: relative;
+}
+/* line 39, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card .cta {
+  display: none;
+  padding-bottom: 2em;
+  margin-top: 0.5em;
+}
+/* line 45, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card:hover {
+  border-color: #1a1a1a;
+}
+/* line 47, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card:hover .cta {
+  display: block;
+}
+/* line 51, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card:hover .card-controls {
+  border-bottom-color: #c6c6c6;
+}
+
+/* line 57, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card-controls-icon {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+/* line 61, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card-controls-icon a {
+  color: white;
+}
+
+/* line 66, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card-controls {
+  display: block;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-bottom-color: transparent;
+  border-width: 0 0em 2em 2em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: border-bottom-color, 0.5s;
+}
+/* line 73, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card-controls ul {
+  height: 2em;
+  width: 4em;
+  left: -100%;
+}
+/* line 78, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card-controls ul li {
+  height: 2em;
+  width: 2em;
+  display: inline-block;
+  background: #c6c6c6;
+  padding: 0.5em;
+}
+/* line 85, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card-controls ul li a {
+  color: white;
+}
+
+/* line 93, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+h1, .info-collapsed .name {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+/* line 98, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+h2, .like-h2 {
+  font-size: 1.7em;
+  line-height: 1.5em;
+  font-weight: 700;
+}
+
+/* line 104, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+h3 {
+  font-size: 1.4em;
+  line-height: 1.5em;
+  font-weight: 700;
+}
+
+/* line 110, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+h4 {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  font-weight: 700;
+}
+
+/* line 116, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+a {
+  cursor: pointer;
+  color: #666666;
+}
+/* line 119, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 124, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.cta {
+  border: 1px solid #e4e4e4;
+  background: #c6c6c6;
+  padding: 1em;
+}
+
+/* line 134, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card-suggestions {
+  padding: 1em 0 1em 0;
+}
+/* line 137, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.card-suggestions p {
+  margin: 1em 0;
+}
+
+/* line 142, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.resource {
+  padding: 1em;
+}
+/* line 144, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.resource a {
+  font-weight: 700;
+}
+
+/* line 149, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+body {
+  color: #666666;
+}
+
+/* line 156, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 1em;
+  max-width: 70em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 166, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+header ul li {
+  display: inline-block;
+}
+/* line 12, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+header:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* line 173, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.add {
+  width: 11.26761%;
+  float: left;
+  margin-right: 1.40845%;
+}
+
+/* line 177, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+input.omnibar {
+  width: 74.64789%;
+  float: left;
+  margin-right: 1.40845%;
+  padding: 10px 0;
+}
+
+/* line 182, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.export {
+  width: 11.26761%;
+  float: right;
+  margin-right: 0;
+}
+
+/* line 186, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.button, .save-button {
+  cursor: pointer;
+  padding: 10px 0;
+  background: #e4e4e4;
+  text-align: center;
+  transition: all 0.5s;
+  border-radius: 3px;
+}
+/* line 194, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.button:hover, .save-button:hover {
+  background: #8c8c8c;
+  color: white;
+}
+
+/* line 202, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+main {
+  max-width: 70em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7em;
+}
+/* line 12, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+main:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 13, ../../../../../.rvm/gems/ruby-2.1.2/gems/toolkit-2.6.0/stylesheets/toolkit/_clearfix.scss */
+main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 208, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.deckgrid {
+  clear: both;
+}
+
+/* line 212, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.compact .name {
+  color: black;
+}
+
+/* line 216, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.info-collapsed {
+  width: 100%;
+}
+/* line 13, ../../../../../.rvm/gems/ruby-2.1.2/gems/toolkit-2.6.0/stylesheets/toolkit/_clearfix.scss */
+.info-collapsed:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 220, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.info-collapsed li {
+  display: inline;
+  float: left;
+  padding-right: 2%;
+}
+/* line 226, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.info-collapsed .name {
+  display: inline;
+}
+
+/* line 233, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.actions li {
+  display: inline;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+/* line 240, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.right {
+  float: right !important;
+}
+
+/* line 244, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.left {
+  float: left !important;
+}
+
+/* line 248, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.clear {
+  clear: both;
+}
+
+/* line 253, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.inline li {
+  display: inline-block;
+  margin-right: 12px;
+}
+/* line 257, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.inline li:last-child {
+  display: initial;
+  margin-right: initial;
+}
+
+/* line 263, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.introduction {
+  clear: both;
+  margin-top: 30px;
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 12, ../../../../../.rvm/gems/ruby-2.1.2/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+.introduction:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 268, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.introduction p {
+  margin-left: 30px;
+}
+/* line 271, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.introduction ul {
+  margin-left: 30px;
+}
+
+/* line 276, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.panel, .feature {
+  background: #f0f0f0;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+/* line 283, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.controls {
+  cursor: pointer;
+}
+
+/* line 287, ../../static_compiler-tmp_dest_dir-E0YceuMG.tmp/styles/app.scss */
+.fa {
+  cursor: pointer;
+}
