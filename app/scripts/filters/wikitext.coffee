@@ -5,6 +5,7 @@
 	  	html = input
 
 	  	# headers
+	  	html = html.replace /^!!!!([^\r\n]*)$/mg, '<h5>$1</h5>'
 	  	html = html.replace /^!!!([^\r\n]*)$/mg, '<h4>$1</h4>'
 	  	html = html.replace /^!!([^\r\n]*)$/mg, '<h3>$1</h3>'
 	  	html = html.replace /^!([^\r\n]*)$/gm, '<h2>$1</h2>'
@@ -14,6 +15,6 @@
 	 		html = html.replace /\[\[([^|\]]+)\|([^|]+)\]\]/gm, """<a href='$2' target='_blank'>$1</a>"""
 	 		# html = html.replace /\[\[([^|]+)\|http([^|]+)\]\]/gm, """<a href='http$2' target='_blank'>$1</a>"""
 
-	 		html = html.replace /\r\n/gm, '<br>'
-	 		html = html.replace /\n/gm, '<br>'
+	 		html = html.replace /\r\n\r\n/gm, '<br>'
+	 		html = html.replace /\n\n/gm, '<br>'
 	  	$sce.trustAsHtml(html)

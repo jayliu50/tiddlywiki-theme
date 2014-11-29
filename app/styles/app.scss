@@ -34,6 +34,7 @@ img {
 	min-height: 200px;
 	transition: border-color 0.7s;
 	cursor: pointer;
+	position: relative;
 
 	.cta {
 		display: none;
@@ -46,8 +47,48 @@ img {
 		.cta {
 			display: block;
 		}
+
+		.card-controls {
+			border-bottom-color: $color-gray-light;
+		}
 	}
 }
+
+.card-controls-icon {
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
+	a {
+		color: white;
+	}
+}
+
+.card-controls {
+	@include triangle(transparent, 2em, 2em, 45);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	transition: border-bottom-color, 0.5s;
+
+	ul {
+		height: 2em;
+		width: 4em;
+		left: -100%;
+
+		li {
+			height: 2em;
+			width: 2em;
+			display: inline-block;
+			background: $color-gray-light;
+			padding: 0.5em;
+
+			a {
+				color: white;
+			}
+		}
+	}
+}
+
 
 h1 {
 	font-size: 2em;

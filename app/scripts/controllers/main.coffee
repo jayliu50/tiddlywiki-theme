@@ -43,7 +43,7 @@
         explanation: 'This will make the text "additional information on cats" link to "http://cats.com"'
 
     $scope.editCard = (card, $event) ->
-      return if $event && $event.target.tagName is 'A'
+      return if $event && angular.element($event.target).closest('a').get(0)?.tagName is 'A'
 
       $scope.backupCard = _.cloneDeep card
 
@@ -69,6 +69,6 @@
     $scope.makeDirty = () ->
       $scope.dirty = true
 
-    $scope.deleteCard = () ->
-      _.remove $scope.cards, $scope.currentCard
+    $scope.deleteCard = (card = $scope.currentCard) ->
+      _.remove $scope.cards, card
       $scope.currentCard = null

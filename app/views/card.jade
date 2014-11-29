@@ -2,5 +2,21 @@
   ng-click="mother.editCard(card, $event)"
   )
   h1.title {{card.title}}
-  p
-    div(ng-if="card.content", compile="card.content")
+  div(ng-if="card.content", compile="card.content")
+  .card-controls
+    ul(
+      ng-show="controlsOpen"
+      ng-mouseleave="controlsOpen = false"
+      )
+      li
+        a(ng-click="mother.deleteCard(card)")
+          i.fa.fa-fw.fa-trash-o
+      li
+        a(onclick="alert('This would have shown more information and options for this card')")
+          i.fa.fa-fw.fa-info-circle
+  .card-controls-icon
+    a(
+      ng-mouseover="controlsOpen = true"
+      )
+      i.fa.fa-arrow-right(ng-hide="controlsOpen")
+ 
